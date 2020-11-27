@@ -1,4 +1,4 @@
-     area     appcode, CODE, READONLY
+	 area     appcode, CODE, READONLY
      export __main
 	 ENTRY 
 __main  function		 
@@ -6,7 +6,7 @@ __main  function
 	   
        mov r7,#2	   
 
-       vldr.f32  s1, =0.9 ; xvlaue
+       vldr.f32  s1, =0.5; xvlaue
 	   vmov.f32  s3,s1 
 	   vldr.f32  s4, =1
 	   vldr.f32  s2, =1	 
@@ -19,8 +19,8 @@ loop   cmp r4,#20
 	   
 	   udiv r0, r4, r7    
        mul r1, r0, r7  
-       sub r2, r4, r1 
-       and r10,r4,#1
+       sub r2, r4, r1
+	   
 	   cmp r2,#0
 	   bne odd
 	   beq  even
@@ -37,4 +37,4 @@ endloop
 	   vadd.f32 s8,s8,s1
 stop b stop
 endfunc
-     end  
+     end
